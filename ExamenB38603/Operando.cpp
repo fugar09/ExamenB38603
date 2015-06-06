@@ -2,11 +2,16 @@
 #include "Operando.h"
 
 
-Operando::Operando()
+Operando::Operando(double i)
 {
+	this->i = i;
 }
 
 
 Operando::~Operando()
 {
+}
+
+double Operando::get() {
+	return i;
 }

@@ -1,11 +1,11 @@
 #pragma once
 #include "Operador.h"
-class OperadorMultiplicar :
+class OperadorDividir :
 	public Operador
 {
 public:
-	OperadorMultiplicar();
+	OperadorDividir();
 	Operando * operar(Operando *, Operando *);
-	virtual ~OperadorMultiplicar();
+	virtual ~OperadorDividir();
 };
 

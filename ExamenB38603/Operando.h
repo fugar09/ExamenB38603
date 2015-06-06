@@ -3,10 +3,12 @@
 class Operando :
 	protected Elemento
 {
-protected:
+private:
+	double i;
 
 public:
-	Operando();
+	Operando(double);
+	double get();
 	~Operando();
 };
 
