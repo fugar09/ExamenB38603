@@ -6,7 +6,7 @@ class OperadorMultiplicar :
 public:
 	OperadorMultiplicar();
 	Operando * operar(Operando *, Operando *);
-	void imprimir(ostream &) const = 0;
+	void imprimir(ostream &) const;
 	virtual ~OperadorMultiplicar();
 };
 
