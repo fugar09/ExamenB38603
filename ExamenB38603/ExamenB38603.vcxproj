@@ -81,6 +81,7 @@
   <ItemGroup>
     <ClInclude Include="ArbolBinario.h" />
     <ClInclude Include="Elemento.h" />
+    <ClInclude Include="Lista.h" />
     <ClInclude Include="Operacion.h" />
     <ClInclude Include="Operador.h" />
     <ClInclude Include="OperadorDividir.h" />
@@ -95,6 +96,7 @@
     <ClCompile Include="ArbolBinario.cpp" />
     <ClCompile Include="Elemento.cpp" />
     <ClCompile Include="ExamenB38603.cpp" />
+    <ClCompile Include="Lista.cpp" />
     <ClCompile Include="Operacion.cpp" />
     <ClCompile Include="Operador.cpp" />
     <ClCompile Include="OperadorDividir.cpp" />

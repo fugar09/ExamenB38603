@@ -19,3 +19,8 @@ Elemento::~Elemento()
 		delete hDer;
 	}
 }
+
+ostream & operator<<(ostream & out, const Elemento & e) {
+	e.imprimir(out);
+	return out;
+}

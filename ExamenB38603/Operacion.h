@@ -2,12 +2,15 @@
 #include "stdafx.h"
 #include "Elemento.h"
 class Operacion :
-	protected Elemento
+	public Elemento
 {
-protected:
+friend class ArbolBinario;
+
+private:
 	string expresion;
 public:
 	Operacion(string);
 	virtual ~Operacion();
+	void imprimir(ostream &) const;
 };
 

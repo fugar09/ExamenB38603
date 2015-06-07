@@ -11,3 +11,6 @@ Operacion::Operacion(string expresion)
 Operacion::~Operacion()
 {
 }
+void Operacion::imprimir(ostream& out) const{
+	out <<expresion;
+}

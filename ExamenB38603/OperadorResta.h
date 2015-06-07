@@ -6,6 +6,7 @@ class OperadorResta :
 public:
 	OperadorResta();
 	Operando * operar(Operando *, Operando *);
+	void imprimir(ostream &) const;
 	virtual ~OperadorResta();
 };
 

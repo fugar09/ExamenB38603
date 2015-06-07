@@ -6,6 +6,7 @@ class OperadorSuma :
 public:
 	OperadorSuma();
 	Operando * operar(Operando *, Operando *);
+	void imprimir(ostream &) const;
 	virtual ~OperadorSuma();
 };
 

@@ -6,6 +6,7 @@ class OperadorDividir :
 public:
 	OperadorDividir();
 	Operando * operar(Operando *, Operando *);
+	void imprimir(ostream &) const;
 	virtual ~OperadorDividir();
 };
 

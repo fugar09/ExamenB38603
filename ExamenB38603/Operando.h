@@ -1,13 +1,14 @@
 #pragma once
 #include "Elemento.h"
 class Operando :
-	protected Elemento
+	public Elemento
 {
 private:
 	double i;
 
 public:
 	Operando(double);
+	void imprimir(ostream &) const;
 	double get();
 	~Operando();
 };

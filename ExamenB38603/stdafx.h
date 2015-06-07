@@ -15,3 +15,5 @@
 // TODO: mencionar aquí los encabezados adicionales que el programa necesita
 #include <iostream>
 #include <string>
+#include <fstream>
+#include <ostream>

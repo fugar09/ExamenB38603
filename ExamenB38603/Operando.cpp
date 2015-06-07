@@ -15,3 +15,6 @@ Operando::~Operando()
 double Operando::get() {
 	return i;
 }
+void Operando::imprimir(ostream& out) const {
+	out << i;
+}
