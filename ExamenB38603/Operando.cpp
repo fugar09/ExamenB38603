@@ -2,7 +2,7 @@
 #include "Operando.h"
 
 
-Operando::Operando(double i)
+Operando::Operando(int i)
 {
 	this->i = i;
 }
@@ -12,7 +12,7 @@ Operando::~Operando()
 {
 }
 
-double Operando::get() {
+int Operando::get() {
 	return i;
 }
 void Operando::imprimir(ostream& out) const {

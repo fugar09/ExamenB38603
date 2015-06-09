@@ -14,12 +14,7 @@ using namespace std;
 
 ArbolBinario::ArbolBinario(Elemento* elemento)
 {
-	if (raiz == NULL){
-		raiz = elemento;
-	}
-	else {
-		construirArbol(raiz, elemento);
-	}
+
 }
 
 
@@ -27,50 +22,12 @@ ArbolBinario::~ArbolBinario()
 {
 }
 
-void ArbolBinario::construirArbol(Elemento* nodoActual, Elemento* elemento) {
-	int posicion = buscarMenorPrecedencia(elemento);
-	if (posicion!=-1) {
-		Operacion*expresion = static_cast<Operacion*>(elemento);
-		string parteIzquierda = expresion->expresion.substr(0, posicion);
-		//asignar *hIzq -> parteIzquierda
-		string operador= expresion->expresion.substr(posicion, posicion+1);
-		if (operador == "*") {
-			//nodoActual = new Operador();
-		}
-		//asignar *nodoActual -> operador
-		string parteDerecha= expresion->expresion.substr(posicion+1, expresion->expresion.length);
-		//asignar *hDer-> parteDerecha
-	}
+void ArbolBinario::construirArbol() {
+
 	
 }
-int ArbolBinario::buscarMenorPrecedencia(Elemento * elemento) {
-	int posicion = -1;
-	char simboloGuardado;
-	bool ignorar = false;
-	Operacion*expresion = static_cast<Operacion*>(elemento);
-	for (int i = 0; i < expresion->expresion.length; i++) {
-		char x = expresion->expresion[i];
-		if (x == '(') {
-			ignorar = true;
-		}
-		else if (x == ')') {
-			ignorar = false;
-		}
-		if (!ignorar) {
-			if (x == '+' && (simboloGuardado != '+'&& simboloGuardado != '-')) {
-				posicion = i;
-				simboloGuardado = x;
-			}
-			else if (x == '-' && (simboloGuardado != '+' && simboloGuardado != '-')) {
-				posicion = i;
-				simboloGuardado = x;
-			}
-			else if (x == '*' || x == '/') {
-				posicion = i;
-			}
-		}
-	}
-	return posicion;
+int ArbolBinario::buscarMenorPrecedencia() {
+	return 1;
 
 }
 
@@ -82,8 +39,9 @@ bool ArbolBinario::isOperator(char ch)
 {
 	return ch == '+' || ch == '-' || ch == '*' || ch == '/';
 }
-int ArbolBinario:: toDigit(char ch)
+double ArbolBinario:: toDigit(char ch)
 {
 	return ch - '0';
 }
+
 

@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Elemento" Collapsed="true">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAEAAAAAAAAAAAAAEIAAAAAAAAAAAAAAUgAAAAAAA=</HashCode>
+      <FileName>Elemento.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Operacion" Collapsed="true">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAAAAAAAAABAAAAAAAAAAAUAAAAAAAA=</HashCode>
+      <FileName>Operacion.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Operador" Collapsed="true">
+    <Position X="8.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAIAAAAIAA=</HashCode>
+      <FileName>Operador.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OperadorMultiplicar" Collapsed="true">
+    <Position X="9.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAQAAAAAAAgAAAAAAAAAAQAAAAAAAA=</HashCode>
+      <FileName>OperadorMultiplicar.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Operando" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAgIAQAABAAAAA=</HashCode>
+      <FileName>Operando.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OperadorSuma" Collapsed="true">
+    <Position X="5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAQAAAAAIAAAAAAAAAAAAQAAAAAAAA=</HashCode>
+      <FileName>OperadorSuma.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OperadorResta" Collapsed="true">
+    <Position X="7.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAAAAQAAAAAAAAAAAAAAAAAAQACAAAAAA=</HashCode>
+      <FileName>OperadorResta.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OperadorDividir" Collapsed="true">
+    <Position X="11.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQAAAAAAAAAAAAAgACAAQAAAAAAAA=</HashCode>
+      <FileName>OperadorDividir.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ArbolBinario" Collapsed="true">
+    <Position X="14.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAJAAAAQAAAAAAAEAAAAAAABAAAIQAAAAAAAAAA=</HashCode>
+      <FileName>ArbolBinario.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lista" Collapsed="true">
+    <Position X="16" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAQAQAAAAUAAAAAEgAAAggABCCAAAAAAAAQAAAAAAAA=</HashCode>
+      <FileName>Lista.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

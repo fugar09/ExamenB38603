@@ -15,5 +15,7 @@
 // TODO: mencionar aquí los encabezados adicionales que el programa necesita
 #include <iostream>
 #include <string>
+#include <string.h>
 #include <fstream>
+#include <stdlib.h>
 #include <ostream>

@@ -7,17 +7,21 @@
 #include "OperadorResta.h"
 #include "OperadorSuma.h"
 #include "Operando.h"
+#include "Lista.h"
+
+
 class ArbolBinario
 {
 private:
 	Elemento * raiz;
 public:
-	ArbolBinario(Elemento* );
-	void construirArbol(Elemento*,Elemento*);
-	int buscarMenorPrecedencia(Elemento*);
+	ArbolBinario(Elemento*);
+	void construirArbol();
+	int buscarMenorPrecedencia();
 	bool isDigit(char ch);
 	bool isOperator(char ch);
-	int toDigit(char ch);
+	double toDigit(char ch);
+
 	virtual ~ArbolBinario();
 };
 

@@ -4,6 +4,7 @@
 
 OperadorMultiplicar::OperadorMultiplicar()
 {
+	s = '*';
 }
 
 
@@ -15,5 +16,5 @@ Operando * OperadorMultiplicar::operar(Operando * a, Operando * b) {
 	return new Operando(a->get() * b->get());
 }
 void OperadorMultiplicar::imprimir(ostream& out) const {
-	out << "*";
+	out << this->s;
 }

@@ -4,6 +4,7 @@
 
 OperadorSuma::OperadorSuma()
 {
+	s = '+';
 }
 
 
@@ -15,5 +16,5 @@ Operando * OperadorSuma::operar(Operando * a, Operando * b) {
 	return new Operando(a->get() + b->get());
 }
 void OperadorSuma::imprimir(ostream& out) const {
-	out << "+";
+	out << this->s;
 }

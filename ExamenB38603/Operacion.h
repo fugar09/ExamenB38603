@@ -12,5 +12,6 @@ public:
 	Operacion(string);
 	virtual ~Operacion();
 	void imprimir(ostream &) const;
+	char* getExpresion();
 };
 

@@ -4,6 +4,7 @@
 
 OperadorResta::OperadorResta()
 {
+	s = '-';
 }
 
 
@@ -14,5 +15,5 @@ Operando * OperadorResta::operar(Operando * a, Operando * b) {
 	return new Operando(a->get() - b->get());
 }
 void OperadorResta::imprimir(ostream& out) const {
-	out << "-";
+	out << this->s;
 }
