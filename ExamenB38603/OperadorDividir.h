@@ -8,6 +8,7 @@ private:
 public:
 	OperadorDividir();
 	Operando * operar(Operando *, Operando *);
+	char getSymbol();
 	void imprimir(ostream &) const;
 	virtual ~OperadorDividir();
 };

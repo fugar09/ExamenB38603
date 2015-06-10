@@ -7,6 +7,7 @@ class Elemento
 {
 friend class ArbolBinario;
 friend class Lista;
+friend class Operacion;
 friend ostream & operator<<(ostream &, const Elemento &);
 
 private:

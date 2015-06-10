@@ -11,14 +11,16 @@
 #include "OperadorSuma.h"
 #include "Operando.h"
 #include "Lista.h"
-using namespace std;
+#include "ArbolBinario.h"
 
-Lista descomponerExpresion(char*);
-bool isDigit(char ch);
-bool isOperator(char ch);
+using namespace std;
 
 int _tmain(int argc, _TCHAR* argv[])
 {
+	cout << "Bienvenido al programa de resolucion de operaciones matematicas" << endl;
+	cout << endl;
+	cout << "Se van a leer las operaciones del archivo (operaciones.txt)" << endl;
+
 	Lista operaciones; //crear la lista de operaciones
 	int cantOperaciones=0; //contar la cantidad de operaciones
 	ifstream archivoOperaciones;
@@ -31,97 +33,32 @@ int _tmain(int argc, _TCHAR* argv[])
 		}
 	}
 	archivoOperaciones.close();//cerrar archivo
-
-	cout << "La lista de Operaciones es de: " << operaciones << endl;
-	Elemento* x = operaciones.devolverElemento(2);
-	cout << "Elemento 2 es:"<< *x << endl;
-	cout << "hay " << cantOperaciones << " operaciones" << endl;
-
+	cout << " - Se han leido: " << cantOperaciones << " operaciones" << endl;
+	cout << " - Se ha terminado de leer el archivo (operaciones.txt)" << endl;
+	cout << endl;
+	cout << "Se van a escribir los resultados en el archivo (resultados.txt)" << endl;
 	ofstream resultados;
 	resultados.open("resultados.txt");
 
-	Operacion* prueba = static_cast<Operacion*>(x);
-	char* test1 = prueba->getExpresion();
-	Lista pruebaLista;
-	pruebaLista = descomponerExpresion(test1);
-	cout << pruebaLista << endl;
-
 	for (int i = 0; i < cantOperaciones; i++){
 		
-
 		Elemento* x = operaciones.devolverElemento(i);
-		resultados <<*x <<" = "<< i << endl; //Cambiar i por el resultados de evaluación de la expresión
+		Operacion* operacion = static_cast<Operacion*>(x);
+		string exp = operacion->getExpresion();
+		Operacion* p = new Operacion(exp);
+		ArbolBinario arbol(p);
+		double t = 0.0;
+		t = arbol.resolver();
+		resultados <<*x <<" = "<< t << endl; //Cambiar i por el resultados de evaluación de la expresión
+		cout << " - Se resolvio la operacion: " << *x << " resultado: "<< t << endl;
 	}
 
 	resultados.close();
-
+	cout << endl;
+	cout << "Se ha terminado de escribir los resultados en el archivo (resultados.txt)" << endl;
+	cout << "Revise el archivo, para verificar los resultados" << endl;
+	cout << endl;
+	cout << "El programa ha terminado exitosamente" << endl;
 	system("pause");
 	return 0;
 }
-Lista descomponerExpresion(char* s) {
-	Lista l;
-	bool ejecuto= false;
-	bool parar = false;
-	//while (s != NULL || s != nullptr || s != "\0" ||parar) {
-	while (!parar) {
-		ejecuto = false;
-		if (isDigit(*s)) {
-			l.insertarFinal(new Operando(*s-'0'));
-			s++;
-			ejecuto = true;
-		}
-		else if (isOperator(*s)) {
-			if (*s == '+') {
-				l.insertarFinal(new OperadorSuma());
-			}
-			else if (*s == '-') {
-				l.insertarFinal(new OperadorResta());
-			}
-			else if (*s == '*') {
-				l.insertarFinal(new OperadorMultiplicar());
-			}
-			else if (*s == '/') {
-				l.insertarFinal(new OperadorDividir());
-			}
-			s++;
-			ejecuto = true;
-		}
-		else if (*s == '(') {
-			char* s_i = s; //posición de memoria donde encontró el parentesis
-			int parentesisAbierto = 0;
-			int parentesisCerrado = 0;
-			do  {
-				if (*s == '(') {
-					parentesisAbierto++;
-				}
-				else if (*s == ')') {
-					parentesisCerrado++;
-				}
-				s++;
-			} while (parentesisCerrado != parentesisAbierto);
-			int size = s - s_i;
-			string expresion;
-			//for (int i = 0; i < size; i++){
-				expresion.append(s_i);
-				//s_i++;
-			//}
-			l.insertarFinal(new Operacion(expresion));
-			ejecuto = true;
-		}
-		if (!ejecuto){
-			parar = true;
-
-		}
-	}
-	return l;
-}
-
-bool isDigit(char ch)
-{
-	return ch >= '0' && ch <= '9';
-}
-bool isOperator(char ch)
-{
-	return ch == '+' || ch == '-' || ch == '*' || ch == '/';
-}
-

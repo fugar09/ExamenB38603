@@ -4,7 +4,6 @@
 
 Elemento::Elemento()
 {
-	//Constructor que hace que un elemento sea un tipo numero
 	hIzq = NULL;
 	hDer = NULL;
 	siguiente = NULL;

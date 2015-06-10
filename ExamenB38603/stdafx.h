@@ -19,3 +19,4 @@
 #include <fstream>
 #include <stdlib.h>
 #include <ostream>
+#include <typeinfo>

@@ -18,3 +18,6 @@ Operando * OperadorSuma::operar(Operando * a, Operando * b) {
 void OperadorSuma::imprimir(ostream& out) const {
 	out << this->s;
 }
+char OperadorSuma::getSymbol() {
+	return s;
+}

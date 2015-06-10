@@ -4,12 +4,12 @@ class Operando :
 	public Elemento
 {
 private:
-	int i;
+	double i;
 
 public:
-	Operando(int);
+	Operando(double);
 	void imprimir(ostream &) const;
-	int get();
+	double get();
 	~Operando();
 };
 

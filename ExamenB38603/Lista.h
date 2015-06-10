@@ -4,7 +4,7 @@
 using namespace std;
 
 class Lista {
-
+	friend class ArbolBinario;
 	friend ostream & operator<<(ostream &, Lista &);
 
 private:

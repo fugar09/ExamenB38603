@@ -18,3 +18,6 @@ Operando * OperadorMultiplicar::operar(Operando * a, Operando * b) {
 void OperadorMultiplicar::imprimir(ostream& out) const {
 	out << this->s;
 }
+char OperadorMultiplicar::getSymbol() {
+	return s;
+}

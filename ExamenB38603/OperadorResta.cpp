@@ -17,3 +17,6 @@ Operando * OperadorResta::operar(Operando * a, Operando * b) {
 void OperadorResta::imprimir(ostream& out) const {
 	out << this->s;
 }
+char OperadorResta::getSymbol() {
+	return s;
+}
