@@ -81,6 +81,7 @@ Elemento* ArbolBinario::armarRec(string exp) {
 
 ArbolBinario::~ArbolBinario()
 {
+	delete raiz;
 }
 ostream & operator<<(ostream & out, ArbolBinario & a) {
 	a.imprimir(a.raiz, out, 0);

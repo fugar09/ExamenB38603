@@ -46,11 +46,12 @@ int _tmain(int argc, _TCHAR* argv[])
 		Operacion* operacion = static_cast<Operacion*>(x);
 		string exp = operacion->getExpresion();
 		Operacion* p = new Operacion(exp);
-		ArbolBinario arbol(p);
+		ArbolBinario* arbol= new ArbolBinario(p);
 		double t = 0.0;
-		t = arbol.resolver();
+		t = arbol->resolver();
 		resultados <<*x <<" = "<< t << endl; //Cambiar i por el resultados de evaluación de la expresión
 		cout << " - Se resolvio la operacion: " << *x << " resultado: "<< t << endl;
+		delete arbol;
 	}
 
 	resultados.close();

@@ -38,6 +38,7 @@ public:
 	Operando* getValue(Elemento*);
 	bool isOperator(Elemento*);
 
+
 	
 	
 	
