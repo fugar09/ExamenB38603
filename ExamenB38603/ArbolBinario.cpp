@@ -203,10 +203,6 @@ Operando* ArbolBinario::getValue(Elemento* e) {
 
 bool ArbolBinario::isOperator(Elemento* e) {
 	//Metodo que devuelve si el elemento revisado es un operador o no
-	if (e->hIzq == NULL || e->hDer == NULL) { //en caso de que el elemento revisado tenga hijos en nulo, se sabe que es un operando, por lo cual retorna false
-		return false;
-	}
-	else {
-		return true;
-	}
+	return !(e->hIzq == NULL || e->hDer == NULL); //en caso de que el elemento revisado tenga hijos en nulo, se sabe que es un operando, por lo cual retorna false
+
 }
