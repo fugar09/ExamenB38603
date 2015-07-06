@@ -23,6 +23,10 @@ class ArbolBinario
 private:
 	Elemento * raiz;
 	void imprimir(Elemento *, ostream &, int);
+	static const int NUM_OPERADORES = 4;
+	static const char OPERADORES[NUM_OPERADORES];
+	static const char LEFT_PARENTHESIS = '(';
+	static const char RIGHT_PARENTHESIS = ')';
 public:
 	ArbolBinario();
 	ArbolBinario(Operacion*);
@@ -37,6 +41,7 @@ public:
 	double resolver();
 	Operando* getValue(Elemento*);
 	bool isOperator(Elemento*);
+	void eliminarParentesisInnecesarios(string &);
 
 
 	

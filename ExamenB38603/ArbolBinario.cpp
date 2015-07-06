@@ -14,12 +14,15 @@
 
 using namespace std;
 
+const char ArbolBinario::OPERADORES[ArbolBinario::NUM_OPERADORES] = { '+', '-', '/', '*' };
+
 ArbolBinario::ArbolBinario()
 {
 	this->raiz = NULL;
 }
 ArbolBinario::ArbolBinario(Operacion* op) {
 	Elemento* e;
+ 
 	e = armarRec(op->getExpresion()); //armar el arbol utilizando la recursión
 
 	raiz = e;
@@ -30,7 +33,7 @@ ArbolBinario::ArbolBinario(Operacion* op) {
 Elemento* ArbolBinario::armarRec(string exp) {
 	//Metodo recursivo que arma el arbol,apartir de una expresión
 	Elemento* e = NULL;
-
+	eliminarParentesisInnecesarios(exp);
 	double op = 0.0;
 	if (isOnlyDouble(exp)) {//En caso de que la expresión se únicamente doubles (es decir,es un operando)
 		op = convertToDouble(exp); //se convierte a double esa expresion
@@ -101,24 +104,25 @@ void ArbolBinario::imprimir(Elemento* nodo, ostream& out, int profundidad) {
 }
 
 
-int ArbolBinario::buscarPrecedencia(string exp) {
+int ArbolBinario::buscarPrecedencia(string string) {
 	//Función que retorna la posición donde esta el signo de menor precedencia en una expresión matemática
 
-	int index = 0;
-	int size = exp.length();
-	for (int i = 0; i < size; i++)
-	{
-		if (profundidad(i,exp) == 0) {
-			if (exp.at(i) == '+' || exp.at(i) == '-') {
-				index = i;
-				break;
+	int index = -1;
+	int parentesis = 0;
+	for (int k = 0; k < NUM_OPERADORES && index == -1; k++) {
+		for (unsigned int i = 0; i < string.length() && index == -1; ++i) {
+			char c = string[i];
+			if (c == LEFT_PARENTHESIS) {
+				parentesis++;
 			}
-			else if (exp.at(i) == '*' || exp.at(i) == '/') {
+			else if (c == RIGHT_PARENTHESIS) {
+				parentesis--;
+			}
+			else if (parentesis == 0 && c == OPERADORES[k]) {
 				index = i;
 			}
 		}
 	}
-
 	return index;
 }
 int ArbolBinario::profundidad(int pos, string exp) {
@@ -205,4 +209,31 @@ bool ArbolBinario::isOperator(Elemento* e) {
 	//Metodo que devuelve si el elemento revisado es un operador o no
 	return !(e->hIzq == NULL || e->hDer == NULL); //en caso de que el elemento revisado tenga hijos en nulo, se sabe que es un operando, por lo cual retorna false
 
+}
+
+void ArbolBinario::eliminarParentesisInnecesarios(string & string) {
+	bool continuar = true;
+	while (continuar) {
+		continuar = false;
+		if (string[0] == LEFT_PARENTHESIS && string[string.length() - 1] == RIGHT_PARENTHESIS) {
+			int parentesis = 1;
+			bool quitarParentesis = true;
+			for (unsigned int i = 1; i < string.length() - 1 && quitarParentesis; ++i) {
+				char c = string[i];
+				if (c == LEFT_PARENTHESIS) {
+					parentesis++;
+				}
+				else if (c == RIGHT_PARENTHESIS) {
+					parentesis--;
+				}
+				if (parentesis < 1) {
+					quitarParentesis = false;
+				}
+			}
+			if (quitarParentesis) {
+				string = string.substr(1, string.length() - 2);
+				continuar = true;
+			}
+		}
+	}
 }
